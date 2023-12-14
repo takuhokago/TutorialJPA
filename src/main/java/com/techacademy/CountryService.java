@@ -12,7 +12,7 @@ import jakarta.transaction.Transactional;
 public class CountryService {
     private final CountryRepository repository;
 
-    @Autowired
+
     public CountryService(CountryRepository repository) {
         this.repository = repository;
     }
@@ -22,7 +22,7 @@ public class CountryService {
     }
 
     public Country getCountry(String code) {
-        Optional<Country> option = repository.findById(null);
+        Optional<Country> option = repository.findById(code);
         Country country = option.orElse(null);
         return country;
     }
